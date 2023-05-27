@@ -7,7 +7,8 @@
     "test": "jest --env=jsdom --coverage --verbose --collectCoverageFrom=**/*.jsx",
     "dev": "npx webpack --watch --mode development & npx nodemon --watch ./server ./server/index.js",
     "build": "npx webpack --mode production",
-    "start": "node ./server/index.js"
+    "start": "node ./server/index.js",
+    "import-reviews-csv": "psql -d reviews -U seanwinnik -h localhost -p 5432 -f ./server/db/import_reviews_csv.sql "
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,9 @@
     "express": "^4.18.2",
     "file-loader": "^6.2.0",
     "morgan": "^1.10.0",
+    "pg": "^8.11.0",
+    "postgres": "^3.3.4",
+    "postgres-date": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.62.1",
